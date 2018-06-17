@@ -1,6 +1,6 @@
 <?php
 ini_set('default_charset', 'utf-8');
-require_once '../amo/amo2.php';
+require_once '../amo/amo.php';
 
 /*
 Чтобы посмотреть id полей, запустите пример accinfo.php
@@ -130,7 +130,11 @@ $form_data = array();
 
 
 /* Добавление лида в Amo */
-$amo = new Amo;
+$subdomain = "";
+$login = "";
+$hash = "";
+
+$amo = new Amo($subdomain, $login, $hash);
 $amo->login();
 
 $lead_name = $VAR['name'];

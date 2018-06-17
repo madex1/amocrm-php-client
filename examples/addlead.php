@@ -52,7 +52,11 @@ $custom_fields_contact[]=array(
                       )
                     );
       /* Добавление сделки в Amo */
-      $amo = new Amo;
+      $subdomain = "";
+      $login = "";
+      $hash = "";
+
+      $amo = new Amo($subdomain, $login, $hash);
       $amo->login();
 
       $lead_name = "имя лида";
